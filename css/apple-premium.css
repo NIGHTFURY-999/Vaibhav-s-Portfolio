@@ -1,0 +1,360 @@
+/* ==========================================================================
+   APPLE-PREMIUM — Full Visual System Override
+   Loads last. Re-skins the entire site toward a restrained, monochrome +
+   single-accent aesthetic: huge confident type, flat cards, generous
+   whitespace, quiet motion. Structure/markup untouched — visuals only.
+   ========================================================================== */
+
+/* ── 1. Palette remap ──────────────────────────────────────────────────────
+   Because almost every color in the site is driven off these CSS variables
+   (text-cyan, text-purple, glass-card glows, button gradients, badges…),
+   redefining them here cascades a single coherent palette through the whole
+   site without having to touch each component individually. */
+:root {
+  --bg-void: #000000;
+  --bg-base: #050506;
+  --bg-surface: #0a0a0c;
+  --bg-card: rgba(255, 255, 255, 0.035);
+  --bg-card-hover: rgba(255, 255, 255, 0.055);
+
+  /* single hero accent — Apple blue — everything else goes neutral */
+  --accent-blue: #0071e3;
+  --accent-cyan: #0071e3;
+  --accent-indigo: #2a2a2e;
+  --accent-purple: #e6e6ea;
+  --accent-violet: #e6e6ea;
+  --accent-emerald: #30d158;
+  --accent-amber: #e6e6ea;
+  --accent-rose: #e6e6ea;
+
+  --neon-blue: #0071e3;
+  --neon-cyan: #0071e3;
+  --neon-purple: #e6e6ea;
+  --neon-sky: #0071e3;
+  --apple-blue: #0071e3;
+  --apple-cyan: #0071e3;
+  --apple-purple: #e6e6ea;
+  --apple-green: #30d158;
+  --apple-orange: #e6e6ea;
+  --apple-pink: #e6e6ea;
+
+  --border-neon: rgba(255, 255, 255, 0.14);
+  --glow-cyan-sm: 0 0 0 rgba(0, 0, 0, 0);
+  --glow-cyan-lg: 0 20px 60px rgba(0, 113, 227, 0.18);
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glass: rgba(255, 255, 255, 0.12);
+  --border-hover: rgba(0, 113, 227, 0.55);
+
+  --text-primary: #f5f5f7;
+  --text-secondary: #a1a1a6;
+  --text-muted: #6e6e73;
+  --text-accent: #0071e3;
+
+  --font-main: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.3);
+  --shadow-glow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  --shadow-card-xl: 0 30px 80px rgba(0, 0, 0, 0.55);
+
+  --ease-apple: cubic-bezier(0.28, 0.11, 0.32, 1);
+}
+
+/* ── 2. Base cleanup ── */
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body { background-color: #000; }
+
+::selection { background: rgba(0, 113, 227, 0.4); color: #fff; }
+
+:focus-visible {
+  outline: 2px solid rgba(0, 113, 227, 0.8);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #000; }
+::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.16); border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255, 255, 255, 0.3); }
+
+/* Kill the psychedelic hue-rotating aurora — keep only a faint, still glow */
+body::before {
+  animation: none !important;
+  opacity: 0.55 !important;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0, 113, 227, 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 100% 100%, rgba(255, 255, 255, 0.03) 0%, transparent 60%) !important;
+}
+
+body::after { opacity: 0.015 !important; }
+
+/* Mouse spotlight reads as a gimmick on a premium page — remove it */
+#cursor-spotlight { display: none !important; }
+
+/* Mute + desaturate the particle field so it reads as texture, not confetti */
+#bg-canvas {
+  opacity: 0.4 !important;
+  filter: grayscale(0.7) brightness(1.1);
+}
+
+/* The 4-theme "mood" cycler fights a single deliberate palette — hide it */
+#theme-mood-btn { display: none !important; }
+
+/* ── 3. Typography ── */
+h1, h2, h3, h4, .hero-title, .section-title {
+  font-family: var(--font-main);
+  font-weight: 600;
+}
+
+.hero-title {
+  font-size: clamp(2.75rem, 6.6vw, 5.25rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.04em !important;
+  font-weight: 600 !important;
+  text-shadow: none;
+}
+
+.hero-tagline {
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  max-width: 46ch;
+}
+
+.text-gradient-cyan {
+  background: linear-gradient(180deg, #ffffff 0%, #b0b0b8 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.section-title {
+  font-size: clamp(2rem, 3.6vw, 3rem) !important;
+  letter-spacing: -0.035em !important;
+  font-weight: 600 !important;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.08rem;
+}
+
+.section-header { margin-bottom: 4.5rem !important; }
+
+.section-tag {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  box-shadow: none;
+  font-weight: 500;
+}
+
+.section-tag i { color: var(--accent-blue); }
+
+/* ── 4. Generous section rhythm ── */
+section { padding: 8.5rem 0 !important; }
+.hero-section { padding-top: 9rem !important; padding-bottom: 5rem !important; }
+
+/* ── 5. Buttons: flat, confident, no gimmicks ── */
+.btn-neon, .btn-neon-sm {
+  background: var(--accent-blue) !important;
+  box-shadow: none !important;
+  border-radius: 980px;
+  font-weight: 500;
+  transition: background 0.25s var(--ease-apple), transform 0.25s var(--ease-apple);
+}
+
+.btn-neon::before, .btn-neon-sm::before { content: none !important; }
+
+.btn-neon:hover, .btn-neon-sm:hover {
+  background: #0077ed !important;
+  transform: translateY(-1px);
+  box-shadow: none !important;
+  color: #fff;
+}
+
+.btn-neon:active, .btn-neon-sm:active { transform: translateY(0) scale(0.98); background: #0068d1 !important; }
+
+.btn-glass, .btn-glass-sm {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: var(--text-primary);
+  box-shadow: none;
+  font-weight: 500;
+  transition: all 0.25s var(--ease-apple);
+}
+
+.btn-glass:hover, .btn-glass-sm:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+  box-shadow: none;
+}
+
+.btn-icon-round {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.25s var(--ease-apple);
+}
+
+.btn-icon-round:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: var(--text-primary);
+  transform: none;
+}
+
+/* ── 6. Cards: flat surfaces, quiet depth ── */
+.glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(20px) saturate(120%);
+  -webkit-backdrop-filter: blur(20px) saturate(120%);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card-xl);
+  transition: transform 0.4s var(--ease-apple), border-color 0.4s var(--ease-apple), box-shadow 0.4s var(--ease-apple);
+}
+
+.glass-card::before { background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent); }
+
+.glass-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.18);
+  box-shadow: 0 40px 90px rgba(0, 0, 0, 0.6);
+}
+
+.featured-border { border-color: rgba(0, 113, 227, 0.35) !important; }
+
+/* Neutralize the rainbow of decorative icon colors — one calm palette */
+.text-cyan, .text-purple, .text-emerald, .text-yellow,
+i.text-cyan, i.text-purple, i.text-yellow {
+  color: var(--text-secondary) !important;
+}
+
+/* But keep meaningful accents: primary brand touches + "available" status */
+.hero-status-pill .text-cyan,
+.section-tag i,
+.holo-feature-item i,
+.pitch-checklist i,
+.download-cv-btn i,
+a .text-cyan {
+  color: var(--accent-blue) !important;
+}
+
+.status-dot { background: var(--accent-emerald) !important; box-shadow: 0 0 0 3px rgba(48, 209, 88, 0.16); }
+
+/* ── 7. Header / nav ── */
+.site-header {
+  background: rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: saturate(180%) blur(20px);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: none;
+}
+
+.site-header.scrolled {
+  background: rgba(0, 0, 0, 0.82) !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.brand-logo .logo-icon {
+  background: var(--accent-blue);
+  box-shadow: none;
+}
+
+.main-nav a {
+  color: var(--text-secondary);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover, .main-nav a.active { color: var(--text-primary); }
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  left: 50%; bottom: -6px;
+  width: 0; height: 2px;
+  background: var(--accent-blue);
+  transform: translateX(-50%);
+  transition: width 0.3s var(--ease-apple);
+}
+
+.main-nav a:hover::after, .main-nav a.active::after { width: 60%; }
+
+/* ── 8. Hero visual card ── */
+.hero-visual-card { box-shadow: var(--shadow-card-xl); }
+
+.avatar-hologram {
+  background: var(--accent-blue);
+  box-shadow: none;
+}
+
+/* ── 9. Stat numbers: quiet, no rainbow gradient ── */
+.hero-stats .stat-value,
+#hero-stats-grid strong {
+  color: var(--text-primary) !important;
+  background: none !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+}
+
+/* ── 10. Floating AI Twin launcher ── */
+.ai-twin-floating-btn {
+  background: var(--accent-blue) !important;
+  box-shadow: 0 8px 24px rgba(0, 113, 227, 0.4) !important;
+}
+
+.pulse-ring { border-color: rgba(0, 113, 227, 0.45) !important; }
+
+.ai-mode-pill.active {
+  background: var(--accent-blue) !important;
+  color: #fff !important;
+}
+
+/* ── 11. macOS-style dock: flat glass, one accent ── */
+.macos-dock-wrapper {
+  background: rgba(20, 20, 22, 0.7) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  box-shadow: var(--shadow-card-xl) !important;
+  backdrop-filter: blur(24px) saturate(160%);
+}
+
+.dock-item:hover { background: rgba(255, 255, 255, 0.08) !important; }
+.dock-item.active { color: var(--accent-blue) !important; }
+
+/* ── 12. Footer ── */
+.site-footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  background: none;
+}
+
+.footer-social-link {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  transition: all 0.25s var(--ease-apple);
+}
+
+.footer-social-link:hover {
+  background: var(--accent-blue) !important;
+  border-color: var(--accent-blue) !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: none;
+}
+
+/* ── 13. Scroll reveal: slower, calmer easing ── */
+.reveal {
+  transition: opacity 0.9s var(--ease-apple), transform 0.9s var(--ease-apple) !important;
+}
+
+/* ── 14. Command palette / modals: flatten to match ── */
+.palette-modal-box, .modal-dialog {
+  background: rgba(20, 20, 22, 0.92) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: var(--shadow-card-xl) !important;
+  backdrop-filter: blur(24px) saturate(160%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .glass-card, .btn-neon, .btn-glass { transition: none !important; }
+}

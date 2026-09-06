@@ -1,0 +1,293 @@
+/* ==========================================================================
+   PREMIUM APPLE-INSPIRED OVERLAY v2
+   Refined colors, 3D Card Tilt on all cards, GitHub Pages friendly,
+   Theme Mood customizer & Live ML Playground styling.
+   ========================================================================== */
+
+:root {
+  --bg-pure-black: #020205;
+  --bg-dark-base:  #08090f;
+  --bg-dark-surface: #0d0e18;
+  --bg-dark-card: rgba(14, 15, 28, 0.65);
+  --bg-dark-card-hover: rgba(20, 22, 40, 0.85);
+
+  /* Sophisticated, non-harsh palette */
+  --apple-blue:   #2997ff;
+  --apple-cyan:   #5ac8fa;
+  --apple-purple: #bf5af2;
+  --apple-green:  #30d158;
+  --apple-orange: #ff9f0a;
+  --apple-pink:   #ff375f;
+
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-glass:  rgba(255, 255, 255, 0.12);
+  --border-hover:  rgba(41, 151, 255, 0.35);
+
+  --text-primary:   #f8fafc;
+  --text-secondary: #94a3b8;
+  --text-muted:     #64748b;
+  --text-accent:    #2997ff;
+
+  --shadow-card: 0 20px 60px 0 rgba(0, 0, 0, 0.55);
+  --shadow-glow: 0 0 40px rgba(41, 151, 255, 0.18);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ─── Global Base Background ─── */
+html, body {
+  background-color: var(--bg-pure-black) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Outfit', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+body {
+  background-image: none !important;
+}
+
+/* Subtlest SVG Noise Texture */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
+  opacity: 0.015;
+  mix-blend-mode: overlay;
+}
+
+/* Section dividers */
+section + section {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#bg-canvas {
+  opacity: 1;
+  pointer-events: none;
+}
+
+/* ════════════════════════════════════════════════
+   SCROLL REVEAL ANIMATIONS
+   ════════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.85s var(--ease-out-expo), transform 0.85s var(--ease-out-expo);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ════════════════════════════════════════════════
+   ALL CARDS — 3D TILT PHYSICS & GLASS AESTHETIC
+   ════════════════════════════════════════════════ */
+.glass-card,
+.project-card,
+.article-card,
+.service-card,
+.cert-card,
+.about-bio-card,
+.hero-visual-card,
+.recruiter-why-card,
+.contact-info-card,
+.contact-form-card,
+.skill-category-card {
+  background: linear-gradient(
+    145deg,
+    rgba(15, 18, 32, 0.72) 0%,
+    rgba(9, 11, 20, 0.6) 100%
+  ) !important;
+  backdrop-filter: blur(28px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(150%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.09) !important;
+  border-radius: 22px !important;
+  box-shadow:
+    0 0 0 0.5px rgba(255, 255, 255, 0.05),
+    0 10px 30px rgba(0, 0, 0, 0.35) !important;
+  position: relative;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* Top Sheen Accent Line */
+.glass-card::before,
+.project-card::before,
+.article-card::before,
+.service-card::before,
+.cert-card::before,
+.about-bio-card::before,
+.hero-visual-card::before,
+.recruiter-why-card::before,
+.contact-info-card::before,
+.contact-form-card::before,
+.skill-category-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 8%;
+  right: 8%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18), transparent);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Dynamic Card Light Sheen Following Cursor */
+.card-sheen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 255, 255, 0.07) 0%,
+    rgba(41, 151, 255, 0.03) 40%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.glass-card:hover .card-sheen,
+.project-card:hover .card-sheen,
+.article-card:hover .card-sheen,
+.service-card:hover .card-sheen,
+.cert-card:hover .card-sheen,
+.about-bio-card:hover .card-sheen,
+.hero-visual-card:hover .card-sheen,
+.recruiter-why-card:hover .card-sheen,
+.contact-info-card:hover .card-sheen,
+.contact-form-card:hover .card-sheen,
+.skill-category-card:hover .card-sheen {
+  opacity: 1;
+}
+
+/* Card Hover Elevation */
+.glass-card:hover,
+.project-card:hover,
+.article-card:hover,
+.service-card:hover,
+.cert-card:hover,
+.about-bio-card:hover,
+.hero-visual-card:hover,
+.recruiter-why-card:hover,
+.contact-info-card:hover,
+.contact-form-card:hover,
+.skill-category-card:hover {
+  border-color: rgba(41, 151, 255, 0.3) !important;
+  box-shadow:
+    0 0 0 0.5px rgba(41, 151, 255, 0.2),
+    0 16px 40px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(41, 151, 255, 0.08) !important;
+}
+
+/* ════════════════════════════════════════════════
+   HEADER & NAVBAR
+   ════════════════════════════════════════════════ */
+.site-header {
+  background: rgba(2, 2, 5, 0.72) !important;
+  backdrop-filter: saturate(180%) blur(24px) !important;
+  -webkit-backdrop-filter: saturate(180%) blur(24px) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  height: 54px !important;
+}
+
+.site-header.scrolled {
+  background: rgba(2, 2, 5, 0.9) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* ════════════════════════════════════════════════
+   TYPOGRAPHY & ACCENTS (Earthy / Non-Harsh)
+   ════════════════════════════════════════════════ */
+.text-cyan { color: var(--apple-cyan) !important; }
+.text-purple { color: var(--apple-purple) !important; }
+.text-gradient-cyan {
+  background: linear-gradient(135deg, #ffffff 0%, var(--apple-cyan) 45%, var(--apple-blue) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ════════════════════════════════════════════════
+   BUTTONS — Soft Apple Pill Design
+   ════════════════════════════════════════════════ */
+.btn-neon {
+  background: linear-gradient(135deg, var(--apple-blue) 0%, #1e6acc 100%) !important;
+  color: #ffffff !important;
+  border-radius: 980px !important;
+  box-shadow: 0 4px 16px rgba(41, 151, 255, 0.35) !important;
+  transition: all 0.22s var(--ease-out-expo) !important;
+}
+
+.btn-neon:hover {
+  transform: translateY(-2px) scale(1.02) !important;
+  box-shadow: 0 6px 24px rgba(41, 151, 255, 0.55) !important;
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 980px !important;
+  backdrop-filter: blur(16px) !important;
+  transition: all 0.22s var(--ease-out-expo) !important;
+}
+
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-color: var(--apple-blue) !important;
+  color: #ffffff !important;
+}
+
+/* ════════════════════════════════════════════════
+   MACOS DOCK & FLOATING BUTTONS
+   ════════════════════════════════════════════════ */
+.macos-dock-wrapper {
+  background: rgba(10, 12, 22, 0.75) !important;
+  backdrop-filter: blur(28px) saturate(180%) !important;
+  -webkit-backdrop-filter: blur(28px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* ════════════════════════════════════════════════
+   SCROLL PROGRESS BAR
+   ════════════════════════════════════════════════ */
+#scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 0%;
+  background: linear-gradient(90deg, var(--apple-blue), var(--apple-cyan), var(--apple-purple));
+  z-index: 9999;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(41, 151, 255, 0.6);
+}
+
+/* ════════════════════════════════════════════════
+   INTERACTIVE ML PLAYGROUND WIDGET STYLING
+   ════════════════════════════════════════════════ */
+#ml-playground-widget .glass-card {
+  border: 1px solid rgba(41, 151, 255, 0.2) !important;
+  background: linear-gradient(145deg, rgba(14, 18, 34, 0.8), rgba(8, 10, 20, 0.7)) !important;
+}
+
+.bg-dark-subtle {
+  background: rgba(0, 0, 0, 0.35) !important;
+}
+
+.rounded-16 { border-radius: 16px !important; }
+.rounded-24 { border-radius: 24px !important; }
+
+/* ════════════════════════════════════════════════
+   RESPONSIVE DESIGN
+   ════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  section { padding: 4.5rem 0 !important; }
+}

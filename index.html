@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<script>document.documentElement.classList.add("page-transitioning");</script>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaibhav Shekhar Haldankar | AI & ML Engineer Portfolio</title>
+
+  <!-- SEO & Meta Tags -->
+  <meta name="description"
+    content="Portfolio of Vaibhav Shekhar Haldankar — AI/ML Engineer & Data Scientist. MCA postgraduate building machine learning, cloud and intelligent applications.">
+  <meta name="keywords"
+    content="Vaibhav Shekhar Haldankar, AI Engineer, Machine Learning, Data Science, Python, PyTorch, AWS Cloud, FAISS, LangChain, MERN, MCA, Pune, Portfolio, AI Twin">
+  <meta name="author" content="Vaibhav Shekhar Haldankar">
+  <meta name="theme-color" content="#030712">
+
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:title" content="Vaibhav Shekhar Haldankar | AI & ML Engineer Portfolio">
+  <meta property="og:description"
+    content="Portfolio of Vaibhav Shekhar Haldankar — AI/ML Engineer & Data Scientist. MCA postgraduate building machine learning, cloud and intelligent applications.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/NIGHTFURY-999">
+  <meta property="og:image"
+    content="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1200&auto=format&fit=crop">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Google Fonts: Outfit, Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Outfit:wght@400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/terminal.css">
+  <link rel="stylesheet" href="css/ai-twin.css">
+  <link rel="stylesheet" href="css/premium.css">
+  <link rel="stylesheet" href="css/site-polish.css">
+  <link rel="stylesheet" href="css/apple-premium.css">
+
+  <!-- JSON-LD Structured Data for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Vaibhav Shekhar Haldankar",
+    "jobTitle": "AI Engineer & Data Scientist",
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "DY Patil International University, Pune"
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "St Xaviers College Mapusa, Goa"
+      }
+    ],
+    "knowsAbout": ["Artificial Intelligence", "Machine Learning", "PyTorch", "AWS Cloud", "Python", "Full-Stack Development"],
+    "email": "vaibhavhaldankar999@gmail.com",
+    "telephone": "+91 8177923800",
+    "url": "https://github.com/NIGHTFURY-999"
+  }
+  </script>
+
+</head>
+
+<body data-page="index">
+  <a class="skip-to-content" href="projects.html">Skip to projects</a>
+
+
+<!-- Ambient Aurora Backdrop -->
+  <div id="bg-aurora" aria-hidden="true"></div>
+
+  <!-- Ambient Cursor Glow Spotlight -->
+  <div id="cursor-spotlight"></div>
+
+  <!-- Interactive Particle Background Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Fullscreen Matrix Rain Screen (Triggered via CLI / Easter Egg) -->
+  <div id="matrix-overlay">
+    <canvas id="matrix-canvas"></canvas>
+    <div class="matrix-exit-badge">Click anywhere to exit Matrix Mode</div>
+  </div>
+
+  <!-- 1. Premium Fast-Boot Loader (first visit only; near-instant after) -->
+  <div id="coder-preloader">
+    <div class="loader-mark">
+      <div class="loader-ring"></div>
+      <div class="loader-ring ring-2"></div>
+      <span class="loader-glyph">V</span>
+    </div>
+    <div class="loader-progress-track">
+      <div class="loader-progress-fill" id="preloader-progress-bar"></div>
+    </div>
+    <div class="loader-caption">
+      <span>Loading experience</span>
+      <span id="preloader-percent" class="text-cyan font-mono">0%</span>
+    </div>
+  </div>
+
+  
+<!-- 2. Header & Top Navbar -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="logo-icon"><i class="fa-solid fa-code"></i></div>
+        <span class="logo-text">VAIBHAV'S <span class="text-cyan">PORTFOLIO</span></span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Primary navigation">
+        <a href="index.html" data-page="index">Home</a>
+        <a href="index.html#about" data-page="index">About</a>
+        <a href="skills.html" data-page="skills">Skills</a>
+        <a href="projects.html" data-page="projects">Projects</a>
+        <a href="experience.html" data-page="experience">Experience</a>
+        <a href="contact.html" data-page="contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="cmd-palette-trigger trigger-palette-btn" title="Open Command Palette (Ctrl+K / Cmd+K)">
+          <i class="fa-solid fa-magnifying-glass text-cyan"></i>
+          <span>Search...</span>
+          <span class="kbd-badge">⌘K</span>
+        </button>
+
+        <button id="theme-mood-btn" class="btn-icon-round" title="Switch Visual Theme Mood">
+          <i class="fa-solid fa-palette text-purple"></i>
+        </button>
+
+        <button id="toggle-sound-btn" class="btn-icon-round" title="Toggle Sound Effects">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+
+        <a href="https://drive.google.com/file/d/1yiuKrMVoF2x1alWFS7DphZCEtGoZ2DOV/view?usp=drive_link" target="_blank"
+          rel="noopener noreferrer" class="btn-glass download-cv-btn hide-on-mobile">
+          <i class="fa-solid fa-download text-cyan"></i> <span>Download CV</span>
+        </a>
+
+        <a href="contact.html" class="btn-neon hide-on-mobile">
+          <i class="fa-solid fa-paper-plane"></i> <span>Contact Me</span>
+        </a>
+
+        <button id="mobile-menu-btn" class="btn-icon-round mobile-menu-btn" title="Menu" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="mobile-nav-panel" id="mobile-nav-panel">
+      <a href="index.html" data-page="index">Home</a>
+      <a href="index.html#about" data-page="index">About</a>
+      <a href="skills.html" data-page="skills">Skills</a>
+      <a href="projects.html" data-page="projects">Projects</a>
+      <a href="experience.html" data-page="experience">Experience</a>
+      <a href="contact.html" data-page="contact">Contact</a>
+      <a href="https://drive.google.com/file/d/1yiuKrMVoF2x1alWFS7DphZCEtGoZ2DOV/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="mobile-cv-link">
+        <i class="fa-solid fa-download"></i> Download CV
+      </a>
+    </div>
+  </header>
+
+<!-- 3. Dynamic Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-status-pill">
+            <span class="status-dot"></span>
+            <span>🟢 Open to AI/ML • Data Analyst • Python Roles</span>
+          </div>
+
+          <h1 class="hero-title">
+            Hi, I'm <span class="text-gradient-cyan">Vaibhav</span><br>
+            Shekhar Haldankar
+          </h1>
+
+          <div class="hero-dynamic-wrapper premium-role-line">
+            <i class="fa-solid fa-chevron-right text-cyan"></i>
+            <span id="hero-typing-text"></span>
+            <span class="typing-cursor"></span>
+          </div>
+
+          <p class="hero-tagline">
+            MCA postgraduate specializing in AI & Data Science. I build machine learning models, data-driven
+            applications and intelligent systems using Python, SQL, AWS and modern AI technologies.
+          </p>
+
+          <div class="hero-proof-strip" aria-label="Career focus">
+            <span><i class="fa-solid fa-brain"></i> AI / ML</span>
+            <span><i class="fa-solid fa-chart-column"></i> Data Analytics</span>
+            <span><i class="fa-solid fa-code"></i> Python</span>
+            <span><i class="fa-solid fa-cloud"></i> AWS</span>
+          </div>
+
+          <div class="hero-cta-group">
+            <button id="open-ai-twin-hero-btn" class="btn-neon"
+              onclick="if(window.globalAITwin) window.globalAITwin.openChat();">
+              <i class="fa-solid fa-robot"></i> Ask My AI Twin
+            </button>
+            <a href="https://drive.google.com/file/d/1yiuKrMVoF2x1alWFS7DphZCEtGoZ2DOV/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer" class="btn-glass download-cv-btn">
+              <i class="fa-solid fa-file-arrow-down text-cyan"></i> Download Resume
+            </a>
+            <a href="projects.html" class="btn-glass">
+              <i class="fa-solid fa-arrow-down"></i> View Projects
+            </a>
+          </div>
+
+          <!-- Hero Animated Stats -->
+          <div class="hero-stats" id="hero-stats-grid">
+            <!-- Populated dynamically by app.js -->
+          </div>
+        </div>
+
+        <!-- Hero Visual Hologram Card -->
+        <div class="hero-visual-card glass-card">
+          <div class="hologram-header">
+            <div class="avatar-hologram">
+              <i class="fa-solid fa-brain"></i>
+            </div>
+            <div>
+              <div class="hologram-name">Vaibhav Shekhar Haldankar</div>
+              <div class="hologram-role">MCA (AI & Data Science) • AWS Certified</div>
+            </div>
+          </div>
+
+          <div class="hologram-features">
+            <div class="holo-feature-item">
+              <i class="fa-solid fa-circle-nodes"></i>
+              <div><strong>Semantic Vector Search:</strong> FAISS & dense embeddings for sub-45ms retrieval.</div>
+            </div>
+            <div class="holo-feature-item">
+              <i class="fa-solid fa-chart-area"></i>
+              <div><strong>Research ML:</strong> Kalman Filters & XGBoost for spatio-temporal telemetry.</div>
+            </div>
+            <div class="holo-feature-item">
+              <i class="fa-solid fa-cloud-bolt"></i>
+              <div><strong>AWS Observability:</strong> CloudWatch, Lambda & SNS self-healing automation.</div>
+            </div>
+            <div class="holo-feature-item">
+              <i class="fa-solid fa-award"></i>
+              <div><strong>Leadership:</strong> MCA Placement Coordinator & Class Representative.</div>
+            </div>
+          </div>
+
+          <div class="hologram-cta-box">
+            <div class="text-xs text-muted mb-2 font-mono">⚡ DIRECT CONTACT & CONNECT</div>
+            <div class="d-flex gap-2 justify-content-center">
+              <a href="mailto:vaibhavhaldankar999@gmail.com" class="btn-neon-sm">
+                <i class="fa-solid fa-envelope"></i> Email Me
+              </a>
+              <a href="tel:+918177923800" class="btn-glass-sm">
+                <i class="fa-solid fa-phone"></i> +91 81779 23800
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- 4. About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-tag"><i class="fa-solid fa-user-astronaut"></i> Biography & Background</div>
+        <h2 class="section-title">Bridging ML Research with <span class="text-gradient-cyan">Scalable Engineering</span>
+        </h2>
+        <p class="section-subtitle">Dedicated to constructing intelligent systems that solve high-impact real-world
+          problems.</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-bio-card glass-card">
+          <p>
+            I am a Master of Computer Applications (MCA) postgraduate specializing in <strong>Artificial Intelligence,
+              Data Science, and Software Development</strong> at DY Patil International University, Pune. My engineering
+            focus centers on translating mathematical and machine learning concepts into resilient, production-ready
+            software.
+          </p>
+          <p>
+            My hands-on portfolio encompasses building <strong>research-backed spatio-temporal water quality prediction
+              models</strong> inspired by IEEE Transactions, high-velocity <strong>vector search and transcript
+              summarization systems (QueryTube)</strong> with FAISS & Ollama LLMs, and <strong>self-healing AWS
+              observability pipelines</strong> using CloudWatch and Lambda.
+          </p>
+          <p>
+            Beyond coding, I actively served as <strong>Student Placement Coordinator for MCA</strong> and <strong>Class
+              Representative for BCA</strong>, developing strong cross-functional communication and leadership skills.
+          </p>
+
+          <div class="about-highlights-grid">
+            <div class="bio-highlight-item">
+              <div class="label">Postgraduate Degree</div>
+              <div class="val">MCA (AI & Data Science)</div>
+            </div>
+            <div class="bio-highlight-item">
+              <div class="label">Primary Stack</div>
+              <div class="val">Python, PyTorch, AWS, SQL</div>
+            </div>
+            <div class="bio-highlight-item">
+              <div class="label">Location Base</div>
+              <div class="val">Pune / Goa, India</div>
+            </div>
+            <div class="bio-highlight-item">
+              <div class="label">Specializations</div>
+              <div class="val text-emerald">AI, Cloud & Data</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Engineering Pillars Card -->
+        <div class="recruiter-why-card glass-card">
+          <div>
+            <div class="text-xs text-cyan font-mono uppercase mb-1">Engineering Values & Philosophy</div>
+            <h3>Core Technical Pillars</h3>
+            <ul class="pitch-checklist">
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <div><strong>Full-Lifecycle AI/ML Engineering:</strong> End-to-end data ingestion, exploratory modeling,
+                  PyTorch neural networks, and FAISS vector embeddings.</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <div><strong>AWS Cloud & System Rigor:</strong> Certified Cloud Practitioner with experience in
+                  CloudWatch metric alarms, serverless Lambda, and automated self-healing.</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <div><strong>Backend & Data Systems:</strong> Proficient in Python, SQL schema normalization, REST API
+                  design, and multi-database optimization.</div>
+              </li>
+              <li>
+                <i class="fa-solid fa-circle-check"></i>
+                <div><strong>Leadership & Teamwork:</strong> MCA Student Placement Coordinator & BCA Class
+                  Representative with strong technical communication.</div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="d-flex gap-2">
+            <a href="https://drive.google.com/file/d/1yiuKrMVoF2x1alWFS7DphZCEtGoZ2DOV/view?usp=drive_link"
+              target="_blank" rel="noopener noreferrer" class="btn-neon download-cv-btn w-100 justify-content-center">
+              <i class="fa-solid fa-file-pdf"></i> View Detailed Resume
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Interactive ML Playground Container (Surprise Feature) -->
+      <div id="ml-playground-widget" class="mt-5"></div>
+    </div>
+  </section>
+
+  
+
+<!-- 14. Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-logo">VAIBHAV SHEKHAR HALDANKAR</div>
+      <div class="text-xs text-muted font-mono">
+        MCA (AI & Data Science) • AWS Certified Cloud Practitioner • Machine Learning Engineer
+      </div>
+      <div class="footer-social-row">
+        <a href="https://github.com/NIGHTFURY-999" target="_blank" rel="noopener noreferrer" class="footer-social-link"
+          title="GitHub">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/vaibhav-haldankar/" target="_blank" rel="noopener noreferrer"
+          class="footer-social-link" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://leetcode.com/u/Vaibhav-Haldankar/" target="_blank" rel="noopener noreferrer"
+          class="footer-social-link" title="LeetCode">
+          <i class="fa-solid fa-code"></i>
+        </a>
+        <a href="mailto:vaibhavhaldankar999@gmail.com" class="footer-social-link" title="Email Direct">
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+      </div>
+      <div class="footer-copy">
+        © 2026 Vaibhav Shekhar Haldankar. Built with vanilla modern web technologies, zero external runtime bloat.
+      </div>
+    </div>
+  </footer>
+
+  <!-- 15. AI Twin 🤖 Floating Launcher Button -->
+  <button id="ai-twin-trigger" class="ai-twin-floating-btn" title="Chat with Vaibhav's AI Twin 🤖">
+    <div class="pulse-ring"></div>
+    <i class="fa-solid fa-robot"></i>
+    <span class="ai-twin-badge" id="ai-twin-badge">1</span>
+  </button>
+
+  <!-- 16. AI Twin 🤖 Interactive Chatbot Window -->
+  <div id="ai-twin-widget" class="ai-twin-chat-container">
+    <div class="ai-chat-header">
+      <div class="ai-header-profile">
+        <div class="ai-avatar-thumb">
+          <i class="fa-solid fa-robot"></i>
+        </div>
+        <div class="ai-header-info">
+          <div class="ai-header-name">
+            Vaibhav AI Twin <i class="fa-solid fa-circle-check text-cyan text-xs"></i>
+          </div>
+          <div class="ai-header-status">
+            <span class="status-dot"></span> Neural Core Online (24/7)
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-header-controls">
+        <button id="ai-twin-reset" class="ai-control-btn" title="Reset Conversation">
+          <i class="fa-solid fa-arrows-rotate"></i>
+        </button>
+        <button id="ai-twin-minimize" class="ai-control-btn" title="Minimize Chat">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+        <button id="ai-twin-close" class="ai-control-btn" title="Close Chat">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mode Selector Toolbar -->
+    <div class="ai-modes-toolbar">
+      <span class="mode-label">Mode:</span>
+      <div class="mode-pills-group">
+        <button class="ai-mode-pill" data-mode="crisp"
+          title="Crisp: Concise, fact-dense recruiter bullets">Crisp</button>
+        <button class="ai-mode-pill active" data-mode="clear"
+          title="Clear: Balanced, structured technical explanation">Clear</button>
+        <button class="ai-mode-pill" data-mode="chatty"
+          title="Chatty: Friendly, conversational companion">Chatty</button>
+      </div>
+    </div>
+
+    <!-- Chat Messages Scroll Body -->
+    <div class="ai-messages-body" id="ai-twin-messages">
+      <!-- Populated dynamically by ai-twin.js -->
+    </div>
+
+    <!-- Typing Indicator -->
+    <div class="ai-typing-indicator" id="ai-twin-typing">
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+      <div class="typing-dot"></div>
+    </div>
+
+    <!-- Suggested Prompts Bar -->
+    <div class="ai-prompts-bar" id="ai-twin-prompts">
+      <!-- Populated dynamically by ai-twin.js -->
+    </div>
+
+    <!-- Chat Input Form -->
+    <form class="ai-chat-input-form" id="ai-twin-form">
+      <input type="text" id="ai-twin-input" class="ai-chat-input"
+        placeholder="Ask anything about Vaibhav's projects, skills..." autocomplete="off">
+      <button type="submit" class="btn-send-chat" title="Send Message">
+        <i class="fa-solid fa-paper-plane"></i>
+      </button>
+    </form>
+  </div>
+
+  <!-- 17. macOS Floating Navigation Dock -->
+  <nav class="macos-dock-wrapper" id="macos-dock" aria-label="Floating Navigation Dock">
+    <a href="index.html" class="dock-item" data-page="index" title="Home">
+      <i class="fa-solid fa-house"></i>
+      <span class="dock-tooltip">Home</span>
+    </a>
+    <a href="skills.html" class="dock-item" data-page="skills" title="Skills">
+      <i class="fa-solid fa-microchip"></i>
+      <span class="dock-tooltip">Skills</span>
+    </a>
+    <a href="projects.html" class="dock-item" data-page="projects" title="Projects">
+      <i class="fa-solid fa-code"></i>
+      <span class="dock-tooltip">Projects</span>
+    </a>
+    <a href="experience.html" class="dock-item" data-page="experience" title="Experience">
+      <i class="fa-solid fa-briefcase"></i>
+      <span class="dock-tooltip">Experience</span>
+    </a>
+    <a href="contact.html" class="dock-item" data-page="contact" title="Contact">
+      <i class="fa-solid fa-envelope"></i>
+      <span class="dock-tooltip">Contact</span>
+    </a>
+
+    <div class="dock-divider"></div>
+
+    <button class="dock-item trigger-palette-btn" title="Command Palette (⌘K)">
+      <i class="fa-solid fa-magnifying-glass text-cyan"></i>
+      <span class="dock-tooltip">Search</span>
+    </button>
+
+    <button class="dock-item" onclick="if(window.globalAITwin) window.globalAITwin.toggleChat();" title="AI Twin">
+      <i class="fa-solid fa-robot text-purple"></i>
+      <span class="dock-tooltip">AI Twin</span>
+    </button>
+  </nav>
+
+<!-- 18. Spotlight Command Palette Modal (⌘K) -->
+  <div id="command-palette-modal" class="modal-backdrop">
+    <div class="palette-modal-box">
+      <div class="palette-search-bar">
+        <i class="fa-solid fa-magnifying-glass text-cyan"></i>
+        <input type="text" id="palette-input" class="palette-input"
+          placeholder="Type a command or search (e.g. AWS, CV, Projects)...">
+        <span class="kbd-badge">ESC</span>
+      </div>
+      <div class="palette-results-list" id="palette-results">
+        <!-- Rendered by app.js -->
+      </div>
+      <div class="palette-footer-hint">
+        <span>Navigation: <span class="kbd-badge">↑</span> <span class="kbd-badge">↓</span> to navigate</span>
+        <span>Select: <span class="kbd-badge">Enter</span></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- 19. Project Architecture & Deep Dive Modal -->
+  <div id="project-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" title="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <span id="modal-project-badge" class="project-badge mb-2 d-inline-block"></span>
+        <h3 id="modal-project-title" class="modal-title"></h3>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <h4 class="text-cyan text-sm font-mono uppercase mb-1">Architecture & Implementation</h4>
+          <p id="modal-project-desc" class="text-secondary"></p>
+        </div>
+
+        <div class="mb-3">
+          <h4 class="text-cyan text-sm font-mono uppercase mb-1">Impact & Quantitative Results</h4>
+          <div class="project-impact-box">
+            <i class="fa-solid fa-chart-line text-cyan"></i>
+            <span id="modal-project-impact"></span>
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <h4 class="text-cyan text-sm font-mono uppercase mb-1">Key Technical Highlights</h4>
+          <ul id="modal-project-highlights" class="pitch-checklist"></ul>
+        </div>
+
+        <div>
+          <h4 class="text-cyan text-sm font-mono uppercase mb-2">Technologies Used</h4>
+          <div id="modal-project-tech" class="project-tech-tags"></div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-glass btn-modal-dismiss">Close</button>
+        <a href="#" id="modal-project-github" target="_blank" rel="noopener noreferrer" class="btn-neon">
+          <i class="fa-brands fa-github"></i> View Repository
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 20. Certification Viewer Modal -->
+  <div id="cert-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" title="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <div class="text-xs text-emerald font-mono uppercase mb-1"><i class="fa-solid fa-circle-check"></i> Verified
+          Credential</div>
+        <h3 id="modal-cert-title" class="modal-title"></h3>
+        <div id="modal-cert-issuer" class="text-muted text-sm mt-1"></div>
+      </div>
+      <div class="modal-body">
+        <p id="modal-cert-desc" class="text-secondary mb-4"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn-glass btn-modal-dismiss">Close</button>
+        <a href="#" id="modal-cert-link" target="_blank" rel="noopener noreferrer" class="btn-neon">
+          <i class="fa-solid fa-arrow-up-right-from-square"></i> Verify Credential URL
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 21. Technical Article Reader Modal -->
+  <div id="article-modal" class="modal-backdrop">
+    <div class="modal-dialog" style="max-width: 780px;">
+      <button class="modal-close-btn" title="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <div id="modal-article-meta" class="text-xs text-cyan font-mono mb-1"></div>
+        <h3 id="modal-article-title" class="modal-title"></h3>
+      </div>
+      <div class="modal-body" id="modal-article-body">
+        <!-- Rendered by app.js -->
+      </div>
+      <div class="modal-footer">
+        <button class="btn-glass btn-modal-dismiss">Done Reading</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 22. Quick Direct Connect Modal -->
+  <div id="hire-me-modal" class="modal-backdrop">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" title="Close Modal"><i class="fa-solid fa-xmark"></i></button>
+      <div class="modal-header">
+        <div class="text-xs text-cyan font-mono uppercase mb-1"><i class="fa-solid fa-paper-plane"></i> Direct
+          Connection</div>
+        <h3 class="modal-title">Connect with Vaibhav Shekhar Haldankar</h3>
+      </div>
+      <div class="modal-body">
+        <p class="text-secondary mb-3">
+          Thank you for exploring my portfolio! Here are my primary specializations and direct communication channels:
+        </p>
+        <ul class="pitch-checklist mb-4">
+          <li><i class="fa-solid fa-check text-cyan"></i> <strong>Core Focus:</strong> Artificial Intelligence, Machine
+            Learning, AWS Cloud Infrastructure, Full-Stack Engineering.</li>
+          <li><i class="fa-solid fa-check text-cyan"></i> <strong>Education:</strong> MCA in AI & Data Science (DY Patil
+            University, Pune).</li>
+          <li><i class="fa-solid fa-check text-cyan"></i> <strong>Certifications:</strong> AWS Certified Cloud
+            Practitioner.</li>
+        </ul>
+        <div class="p-3 bg-dark rounded border border-subtle mb-3">
+          <div class="text-xs text-muted mb-1">Direct Contact:</div>
+          <div class="font-bold text-white">📧 vaibhavhaldankar999@gmail.com | 📱 +91 81779 23800</div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="https://drive.google.com/file/d/1yiuKrMVoF2x1alWFS7DphZCEtGoZ2DOV/view?usp=drive_link" target="_blank"
+          rel="noopener noreferrer" class="btn-glass download-cv-btn">
+          <i class="fa-solid fa-download"></i> View Resume
+        </a>
+        <a href="mailto:vaibhavhaldankar999@gmail.com" class="btn-neon">
+          <i class="fa-solid fa-paper-plane"></i> Send Email
+        </a>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/canvas-bg.js"></script>
+  <script src="js/terminal.js"></script>
+  <script src="js/ai-twin.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/scroll-effects.js"></script>
+  <script src="js/theme-mood.js"></script>
+  <script src="js/vector-demo.js"></script>
+
+  <script src="js/nav.js"></script>
+  <script src="js/transitions.js"></script>
+</body>
+
+</html>

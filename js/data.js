@@ -16,7 +16,7 @@ const PORTFOLIO_DATA = {
     location: "Pune / Goa, India",
     availability: "Available for Full-Time & Graduate Opportunities",
     statusBadge: "🟢 Actively Seeking AI/ML & Data Analyst Roles",
-    resumeLink: "https://drive.google.com/file/d/1yiuKrMVoF2x1alWFS7DphZCEtGoZ2DOV/view?usp=drive_link",
+    resumeLink: "assets/Vaibhav-Haldankar-CV.pdf",
     certificatesFolder: "https://drive.google.com/drive/folders/1fwAas4GDRBovPOvl4Cnzzb0g03IHPl4u",
     socials: {
       github: "https://github.com/NIGHTFURY-999",
@@ -588,9 +588,9 @@ const PORTFOLIO_DATA = {
       {
         triggers: ["resume", "cv", "download", "link", "drive"],
         responses: {
-          crisp: "📄 **Download Resume**: [Google Drive Resume Link](https://drive.google.com/file/d/1yiuKrMVoF2x1alWFS7DphZCEtGoZ2DOV/view?usp=drive_link)\n📜 **View Certificates**: [Google Drive Certificates Folder](https://drive.google.com/drive/folders/1fwAas4GDRBovPOvl4Cnzzb0g03IHPl4u)",
-          clear: "You can access Vaibhav's resume and certificates directly:\n\n📄 **[Download Official CV (Google Drive)](https://drive.google.com/file/d/1yiuKrMVoF2x1alWFS7DphZCEtGoZ2DOV/view?usp=drive_link)**\n📜 **[View Certificates Folder (Google Drive)](https://drive.google.com/drive/folders/1fwAas4GDRBovPOvl4Cnzzb0g03IHPl4u)**",
-          chatty: "You can check out Vaibhav's full CV right here: 📄 [Download Resume on Google Drive](https://drive.google.com/file/d/1yiuKrMVoF2x1alWFS7DphZCEtGoZ2DOV/view?usp=drive_link)!\n\nAnd you can browse his official certificates here: 📜 [Certificates Google Drive Folder](https://drive.google.com/drive/folders/1fwAas4GDRBovPOvl4Cnzzb0g03IHPl4u)!"
+          crisp: "📄 **Download Resume**: [Download Resume (PDF)](assets/Vaibhav-Haldankar-CV.pdf)\n📜 **View Certificates**: [Google Drive Certificates Folder](https://drive.google.com/drive/folders/1fwAas4GDRBovPOvl4Cnzzb0g03IHPl4u)",
+          clear: "You can access Vaibhav's resume and certificates directly:\n\n📄 **[Download Official CV (PDF)](assets/Vaibhav-Haldankar-CV.pdf)**\n📜 **[View Certificates Folder (Google Drive)](https://drive.google.com/drive/folders/1fwAas4GDRBovPOvl4Cnzzb0g03IHPl4u)**",
+          chatty: "You can check out Vaibhav's full CV right here: 📄 [Download Resume (PDF)](assets/Vaibhav-Haldankar-CV.pdf)!\n\nAnd you can browse his official certificates here: 📜 [Certificates Google Drive Folder](https://drive.google.com/drive/folders/1fwAas4GDRBovPOvl4Cnzzb0g03IHPl4u)!"
         }
       },
       {

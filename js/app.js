@@ -799,7 +799,7 @@ function initCommandPalette() {
   if (!palette) return;
 
   const actions = [
-    { title: "Download Official CV (Google Drive)", category: "Action", icon: "fa-download", action: () => window.open(window.PORTFOLIO_DATA.personal.resumeLink, '_blank') },
+    { title: "Download Official CV (PDF)", category: "Action", icon: "fa-download", action: () => window.open(window.PORTFOLIO_DATA.personal.resumeLink, '_blank') },
     { title: "Chat with Vaibhav's AI Twin 🤖", category: "AI", icon: "fa-robot", action: () => { closePalette(); if (window.globalAITwin) window.globalAITwin.openChat(); } },
     { title: "Schedule an Interview / Email", category: "Contact", icon: "fa-calendar", action: () => window.location.href = `mailto:${window.PORTFOLIO_DATA.personal.email}?subject=Interview%20Invitation` },
     { title: "Call Vaibhav Directly (+91 81779 23800)", category: "Contact", icon: "fa-phone", action: () => window.location.href = `tel:${window.PORTFOLIO_DATA.personal.phone}` },
@@ -909,7 +909,7 @@ function initModals() {
   // CV Download trigger buttons
   document.querySelectorAll('.download-cv-btn').forEach(btn => {
     btn.addEventListener('click', (e) => {
-      showToast('Opening Vaibhav\'s Official Resume (Google Drive)... 📄');
+      showToast('Opening Vaibhav\'s Official Resume... 📄');
       if (window.AudioEngine) window.AudioEngine.play('success');
     });
   });

@@ -21,7 +21,7 @@ Features a neon dark blue cyber aesthetic, interactive AI Twin chatbot clone wit
    - Animated typewriter headline flipper.
    - Live status indicator: `🟢 Available for Full-Time / Immediate Join`.
    - Real-time animated stats counters.
-   - Direct Google Drive CV download integration.
+   - Direct one-click PDF CV download (served from /assets).
 
 4. **Interactive Sections 🚀**
    - **Skills Matrix**: Categorized with interactive filter tabs and glowing progress meters.

@@ -145,7 +145,7 @@ class InteractiveTerminal {
   <div class="help-row"><span class="cmd text-accent">exp</span> <span>View work experience & leadership timeline</span></div>
   <div class="help-row"><span class="cmd text-accent">certs</span> <span>List verified certifications (AWS, OpenAI, Infosys)</span></div>
   <div class="help-row"><span class="cmd text-accent">hire</span> <span>Quick recruiter pitch & immediate hiring brief</span></div>
-  <div class="help-row"><span class="cmd text-accent">resume</span> <span>Get direct Google Drive CV download link</span></div>
+  <div class="help-row"><span class="cmd text-accent">resume</span> <span>Get direct CV (PDF) download link</span></div>
   <div class="help-row"><span class="cmd text-accent">contact</span> <span>Display direct phone, email, and social links</span></div>
   <div class="help-row"><span class="cmd text-accent">matrix</span> <span>Trigger Matrix rain visual stream</span></div>
   <div class="help-row"><span class="cmd text-accent">clear</span> <span>Clear terminal history screen</span></div>
@@ -242,7 +242,7 @@ class InteractiveTerminal {
 <div class="terminal-card">
   <div class="text-cyan font-bold mb-1">📄 VAIBHAV SHEKHAR HALDANKAR - RESUME / CV</div>
   <div class="text-gray-300 text-sm mb-2">Available for immediate deployment in AI, Data Science, and Software roles.</div>
-  <div>🔗 <a href="${url}" target="_blank" rel="noopener noreferrer" class="text-accent underline font-bold">Click here to open / download Resume (Google Drive)</a></div>
+  <div>🔗 <a href="${url}" target="_blank" rel="noopener noreferrer" class="text-accent underline font-bold">Click here to open / download Resume (PDF)</a></div>
 </div>`;
   }
 

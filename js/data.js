@@ -33,7 +33,7 @@ const PORTFOLIO_DATA = {
       { label: "Hands-on Projects", value: "6+", icon: "fa-code-branch" },
       { label: "Core Technologies", value: "15+", icon: "fa-layer-group" },
       { label: "Industry Certifications", value: "4+", icon: "fa-certificate" },
-      { label: "Academic CGPA (MCA)", value: "6.7", icon: "fa-graduation-cap" }
+      { label: "Academic CGPA (MCA)", value: "7.2", icon: "fa-graduation-cap" }
     ]
   },
 

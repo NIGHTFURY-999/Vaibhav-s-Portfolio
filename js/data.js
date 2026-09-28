@@ -295,7 +295,7 @@ const PORTFOLIO_DATA = {
       institution: "DY Patil International University",
       location: "Pune, Maharashtra, India",
       period: "2024 - 2026",
-      cgpa: "6.7 CGPA",
+      cgpa: "7.2 CGPA",
       status: "Final Year Postgraduate",
       highlights: [
         "Specialized coursework in Machine Learning, Deep Learning, Cloud Computing, and Database Systems",
